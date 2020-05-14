@@ -4,6 +4,11 @@
 # Contact iXsystems (http://ixsystems.com) for assistance
 # 
 # =====================================
+if [ "${1}" = "stop" ] ; then
+  id=$(docker ps | grep "ixsystems/truecommand" | cut -d ' ' -f 1)
+  docker stop "${id}"
+  echo $?
+fi
 
 # Step 1 : Pull latest version (can fail as needed if internet access unavailable)
 docker pull ixsystems/truecommand:latest
@@ -17,6 +22,7 @@ fi
 if [ "${1}" = "service" ] ; then
   #Do not detach from the process. Service needs to know when it is stopped and should be restarted
   docker run  -v "/data:/data" -p "80:80" -p "443:443" ixsystems/truecommand:latest
+
 else
   #Manual run of the start script. Detach from the docker process
   docker run  --detach -v "/data:/data" -p "80:80" -p "443:443"  ixsystems/truecommand:latest
