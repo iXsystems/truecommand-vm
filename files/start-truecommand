@@ -7,7 +7,7 @@
 if [ "${1}" = "stop" ] ; then
   id=$(docker ps | grep "ixsystems/truecommand" | cut -d ' ' -f 1)
   docker stop "${id}"
-  echo $?
+  exit $?
 fi
 
 # Step 1 : Pull latest version (can fail as needed if internet access unavailable)
