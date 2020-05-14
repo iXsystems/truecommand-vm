@@ -6,6 +6,7 @@
 # =====================================
 if [ "${1}" = "stop" ] ; then
   id=$(docker ps | grep "ixsystems/truecommand" | cut -d ' ' -f 1)
+  echo "Stopping TrueCommand container: ${id}"
   docker stop "${id}"
   exit $?
 fi
