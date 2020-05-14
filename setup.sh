@@ -20,6 +20,9 @@ do
     cp "${curdir}/${relpath}" "${instpath}"
   else
     #Fetch the latest version of the file directly from Github
+    if [ -e "${instpath}" ] ; then
+      rm "${instpath}"
+    fi
     wget https://raw.githubusercontent.com/iXsystems/truecommand-vm/master/${relpath} -O "${instpath}"
     chmod 770 "${instpath}" #ensure it is executable by root/group
   fi
