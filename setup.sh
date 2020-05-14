@@ -10,7 +10,7 @@ fi
 curdir=$(dirname $0)
 
 # Step 1: Install files from this repo
-filelist="files/start-truecommand:/usr/local/bin/start-truecommand files/truecommand.service:/etc/systemd/system/truecommand.service"
+filelist="files/start-truecommand:/usr/local/bin/start-truecommand files/truecommand.service:/etc/systemd/system/truecommand.service files/issue:/etc/issue files/motd:/etc/motd"
 for _file in ${filelist}
 do
   relpath=$(echo ${_file} | cut -d : -f 1)

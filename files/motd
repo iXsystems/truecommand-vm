@@ -1,0 +1,10 @@
+-----------------------------
+First-time setup recommendation:
+1. Check that networking is up and running: `ip address`
+   * Edit the "/etc/network/interfaces" file to set a static IP as needed: `sudo nano /etc/network/interfaces`
+2. Ensure that the truecommand instance is running: `sudo docker ps`
+-----------------------------
+Quick Reference Guide
+* TrueCommand service interaction: `systemctl [status|start|stop] truecommand.service`
+* Check current VM IP: `ip addr`
+-----------------------------
