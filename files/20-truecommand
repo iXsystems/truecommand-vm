@@ -1,3 +1,0 @@
-#!/bin/sh
-cip=$(ip address | grep "inet " | grep "global" | grep -v "docker" | tr -s "\t" " " | cut -s -d " " -f 3)
-echo "Current IP: ${cip}"
