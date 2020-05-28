@@ -21,6 +21,11 @@ if [ ! -d "/data" ] ; then
 fi
 
 if [ "${1}" = "service" ] ; then
+  #Update the IP address shown on the login console (since networking is available now)
+  cip=$(ip address | grep "inet " | grep "global" | grep -v "docker" | tr -s "\t" " " | cut -s -d " " -f 3)
+  cp -f "/etc/issue.orig" "/etc/issue"
+  echo "Current IP: ${cip}" >> /etc/issue
+
   #Do not detach from the process. Service needs to know when it is stopped and should be restarted
   docker run  -v "/data:/data" -p "80:80" -p "443:443" ixsystems/truecommand:latest
 
