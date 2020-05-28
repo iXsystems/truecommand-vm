@@ -1,8 +1,11 @@
 ---------------------
 TrueCommand VM Wrapper
 ---------------------
-Default username / password :   
+Default Console username / password :   
             truecommand / truecommand
+            
+Default WebUI username / password :   
+            admin / admin
 
 Current System IP: \4
 ---------------------
