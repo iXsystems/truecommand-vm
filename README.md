@@ -3,7 +3,7 @@ VM Image setup routine for TrueCommand
 
 ## Steps to use:
 1. Install Debian into a VM (VirtualBox, VMWare, etc..)
-   * Set the username/password both to "truecomand"
+   * Set the username/password both to "truecommand"
    * Install the minimal system + SSH
 2. Boot the VM
 3. Run: `wget https://raw.githubusercontent.com/iXsystems/truecommand-vm/master/setup.sh` to fetch the install script
